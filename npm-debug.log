@@ -1,0 +1,73 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'materialize:materialize@=0.97.0' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose cache add [ 'materialize:materialize@=0.97.0', null ]
+5 verbose cache add name=undefined spec="materialize:materialize@=0.97.0" args=["materialize:materialize@=0.97.0",null]
+6 verbose parsed url { protocol: 'materialize:',
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: 'materialize',
+6 verbose parsed url   host: '',
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: '',
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: '/=0.97.0',
+6 verbose parsed url   path: '/=0.97.0',
+6 verbose parsed url   href: 'materialize:/=0.97.0' }
+7 silly lockFile 7c21648c-materialize-materialize-0-97-0 materialize:materialize@=0.97.0
+8 verbose lock materialize:materialize@=0.97.0 /home/guest/.npm/7c21648c-materialize-materialize-0-97-0.lock
+9 silly lockFile 7c21648c-materialize-materialize-0-97-0 materialize:materialize@=0.97.0
+10 silly lockFile 7c21648c-materialize-materialize-0-97-0 materialize:materialize@=0.97.0
+11 verbose addNamed [ 'materialize:materialize@=0.97.0', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 709d36e2-materialize-materialize-0-97-0 materialize:materialize@=0.97.0@
+14 verbose lock materialize:materialize@=0.97.0@ /home/guest/.npm/709d36e2-materialize-materialize-0-97-0.lock
+15 silly addNameRange { name: 'materialize:materialize@=0.97.0',
+15 silly addNameRange   range: '*',
+15 silly addNameRange   hasData: false }
+16 verbose url raw materialize:materialize@=0.97.0
+17 verbose url resolving [ 'https://registry.npmjs.org/',
+17 verbose url resolving   './materialize%3Amaterialize%40%3D0.97.0' ]
+18 verbose url resolved https://registry.npmjs.org/materialize%3Amaterialize%40%3D0.97.0
+19 info trying registry request attempt 1 at 10:18:56
+20 http GET https://registry.npmjs.org/materialize%3Amaterialize%40%3D0.97.0
+21 http 404 https://registry.npmjs.org/materialize%3Amaterialize%40%3D0.97.0
+22 silly registry.get cb [ 404,
+22 silly registry.get   { 'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=0',
+22 silly registry.get     'content-length': '2',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     date: 'Tue, 29 Sep 2015 04:48:57 GMT',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     connection: 'keep-alive',
+22 silly registry.get     'x-served-by': 'cache-sin6926-SIN',
+22 silly registry.get     'x-cache': 'MISS',
+22 silly registry.get     'x-cache-hits': '0',
+22 silly registry.get     'x-timer': 'S1443502137.506957,VS0,VE221' } ]
+23 silly addNameRange number 2 { name: 'materialize:materialize@=0.97.0',
+23 silly addNameRange   range: '*',
+23 silly addNameRange   hasData: true }
+24 silly addNameRange versions [ undefined, [] ]
+25 error TypeError: Cannot read property 'latest' of undefined
+25 error     at next (/usr/share/npm/lib/cache.js:687:35)
+25 error     at /usr/share/npm/lib/cache.js:675:5
+25 error     at saved (/usr/share/npm/node_modules/npm-registry-client/lib/get.js:142:7)
+25 error     at /usr/lib/nodejs/graceful-fs/polyfills.js:133:7
+25 error     at Object.oncomplete (fs.js:107:15)
+26 error If you need help, you may report this log at:
+26 error     <http://github.com/isaacs/npm/issues>
+26 error or email it to:
+26 error     <npm-@googlegroups.com>
+27 error System Linux 3.16.0-43-generic
+28 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "materialize:materialize@=0.97.0"
+29 error cwd /home/guest/mandeep/delicious
+30 error node -v v0.10.25
+31 error npm -v 1.3.10
+32 error type non_object_property_load
+33 verbose exit [ 1, true ]

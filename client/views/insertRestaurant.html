@@ -1,0 +1,27 @@
+<template name="insertRestaurant">
+<h3>Add Restaurant</h3>
+{{#autoForm collection="Restaurants" id="insertRestaurant" type="insert"}}
+  <fieldset>
+    <legend>Add Restaurant</legend>
+    {{> afQuickField name='name'}}
+    {{> afQuickField name='location'}}
+    {{> afQuickField name='description'}}
+    {{> afQuickField name='phoneNumber'}}
+    {{> afQuickField name='address'}}
+    <div class="file-field input-field">
+      <div class="btn">
+        <i class="material-icons" style="font-size : 36px;">local_see</i>
+        <input type="file" id="file-upload" class="file-upload">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
+    <div>
+      <img src="{{imgSrc}}" />
+      {{> afQuickField name='imageId' type='hidden' value=imageId }}
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Insert</button>
+{{/autoForm}}
+</template>

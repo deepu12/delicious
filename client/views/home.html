@@ -1,0 +1,34 @@
+<template name="home">
+	<h1>Welcome to Delicious</h1>
+{{#each restaurants}}
+	<div class="rowx">
+			<div class="col s12 m5">
+				<div class="card">
+					<a href="/aboutRestaurant/{{_id}}"><div class="card-image">
+						{{#if imageId}}
+						{{#with imgId}}
+								<img src="{{this.url}}" width="45">
+						{{/with}}
+						{{else}}
+							<img src="/images/sample-2.jpg" width="45" height="85">
+						{{/if}}
+
+					</div></a>
+					<div class="card-content">
+						<h5>{{name}}</h5>
+						<span>{{location}}</span>
+						<p><h6>Contact Number:</h6>{{phoneNumber}}</p>
+						<p><h6>Address:</h6>{{address}}</p>
+					</div>
+					<div class="card-action">
+						{{#if isOwner}}
+						<a href="/insertMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Add Menu</a>
+						{{else}}
+						<a href="/restaurantMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Go to Menu</a>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+	</div>
+	{{/each}}
+</template>

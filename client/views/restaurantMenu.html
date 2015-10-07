@@ -1,0 +1,20 @@
+<template name="restaurantMenu">
+  <div class="row">
+    <div class="col s9">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#">Menu</a></li>
+        <li class="tab col s3"><a href="/restaurantMenu/{{_id}}/review">Reviews</a></li>
+        <li class="tab col s3"><a href="/info">Info</a></li>
+      </ul>
+    </div>
+  </div>
+ {{#each menu}}
+  <ul class="col s9">
+    <li class="tab col s3">{{category}}</li>
+    <li class="tab col s3">{{item}}</li>
+    <li class="tab col s2">{{flavour}}</li>
+    <li class="tab col s1">{{price}}</li>
+    <button class='button' pid="{{_id}}" id="add-button">+</button>
+  </ul>
+  {{/each}}
+</template>

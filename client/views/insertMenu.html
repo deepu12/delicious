@@ -1,0 +1,15 @@
+<template name="insertMenu">
+  {{#if currentUser}}
+  {{#autoForm collection="Menu" id="insertMenu" type="insert"}}
+    <fieldset>
+      <legend>Add Menu</legend>
+      {{> afQuickField name='category'}}
+      {{> afQuickField name='item'}}
+      {{> afQuickField name='flavour'}}
+      {{> afQuickField name='price'}}
+      {{> afQuickField name='restaurantId' value=restaurantId type="hidden"}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+  {{/if}}
+</template>
