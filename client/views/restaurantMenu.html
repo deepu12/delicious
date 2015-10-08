@@ -2,19 +2,71 @@
   <div class="row">
     <div class="col s9">
       <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#">Menu</a></li>
-        <li class="tab col s3"><a href="/restaurantMenu/{{_id}}/review">Reviews</a></li>
-        <li class="tab col s3"><a href="/info">Info</a></li>
+        <li class="tab col s3"><a class="active" href="#menu">Menu</a></li>
+        <li class="tab col s3"><a href="#reviews">Reviews</a></li>
+        <li class="tab col s3"><a href="#info">Info</a></li>
       </ul>
     </div>
+       <div id="menu" class="col s9">
+          {{#each menu}}
+           <ul class="col s9">
+             <li class="tab col s3">{{category}}</li>
+             <li class="tab col s3">{{item}}</li>
+             <li class="tab col s2">{{flavour}}</li>
+             <li class="tab col s1">{{price}}</li>
+             <button class='button' pid="{{_id}}" id="add-button">+</button>
+           </ul>
+           {{/each}}
+       </div>
+       <div id="reviews" class="col s9">
+          {{#if currentUser}}
+          {{#autoForm collection="Review" id="insertReview" type="insert"}}
+            <fieldset>
+              <legend>Add Comment</legend>
+              {{> starsRating id='rating' size=25 mutable=true}}
+              {{> afQuickField name='comment'}}
+              {{> afQuickField name='restaurantId' value=restaurantId type="hidden"}}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Comment</button>
+          {{/autoForm}}
+          {{/if}}
+          <div id="menu" class="col s9">
+             {{#each review}}
+              <ul class="col s9">
+                <li class="tab col s9"><b>{{createdAt}}</b>
+                  <p>{{comment}} by-<b>{{userName}}</b></p></li>
+               </ul>
+              {{/each}}
+          </div>
+       </div>
+       <div id="info" class="col s9">
+          <div class="rowx">
+             <div class="col s4 m5">
+                <div class="card">
+                  <div class="card-image">
+                     {{#if imageId}}
+                     {{#with imgId}}
+                        <img src="{{this.url}}" width="78" height="150">
+                     {{/with}}
+                     {{else}}
+                        <img src="/images/sample-2.jpg" width="78" height="150">
+                     {{/if}}
+
+                  </div>
+               </div>
+             </div>
+          </div>
+        <div class="rowx">
+           <div class="col s8 m8">
+             <div class="card">
+               <h2>{{aboutRes.name}}</h2>
+                  <span>Description : {{aboutRes.description}}</span>
+                     <h6>Address:</h6>{{aboutRes.address}}
+                </div>
+             </div>
+           </div>
+       </div>
+
   </div>
- {{#each menu}}
-  <ul class="col s9">
-    <li class="tab col s3">{{category}}</li>
-    <li class="tab col s3">{{item}}</li>
-    <li class="tab col s2">{{flavour}}</li>
-    <li class="tab col s1">{{price}}</li>
-    <button class='button' pid="{{_id}}" id="add-button">+</button>
-  </ul>
-  {{/each}}
+
 </template>

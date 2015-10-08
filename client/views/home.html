@@ -4,7 +4,7 @@
 	<div class="rowx">
 			<div class="col s12 m5">
 				<div class="card">
-					<a href="/aboutRestaurant/{{_id}}"><div class="card-image">
+					<a href="/restaurantMenu/{{_id}}"><div class="card-image">
 						{{#if imageId}}
 						{{#with imgId}}
 								<img src="{{this.url}}" width="45">
@@ -15,7 +15,7 @@
 
 					</div></a>
 					<div class="card-content">
-						<h5>{{name}}</h5>
+						<a href="/restaurantMenu/{{_id}}"><h5>{{name}}</h5></a>
 						<span>{{location}}</span>
 						<p><h6>Contact Number:</h6>{{phoneNumber}}</p>
 						<p><h6>Address:</h6>{{address}}</p>

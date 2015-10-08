@@ -3,17 +3,17 @@
     {{> nav}}
   </header>
 
-  <main>
-    <div class="row">
-        <div class="col s3"></div>
-        <div class="col s9">
-          {{>Template.dynamic template=content data=params}}
-        </div>
+   <div class="row">
+      <div class="col s2">left</div>
+      <div class="col s10">
+         <main style="min-height : 550px;">
+           {{>Template.dynamic template=content data=params}}
+         </main>
       </div>
-  </main>
+    </div>
+
 
     <footer class="page-footer">
-
           <div class="footer-copyright">
             <div class="container">
             © 2015 Copyright Delicious

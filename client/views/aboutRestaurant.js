@@ -9,6 +9,9 @@ Template.about.helpers({
     var imgId = Images.findOne({_id:this.imageId});
     console.log("From about Restaurant helper",imgId);
     return imgId;
-  }
+},
+   imageId : function(){
+  return Session.get('srv_img');
+}
 
 });
