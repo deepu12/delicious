@@ -1,12 +1,14 @@
 <template name="restaurantMenu">
-  <div class="row">
+ <div class="row">
     <div class="col s9">
       <ul class="tabs">
         <li class="tab col s3"><a class="active" href="#menu">Menu</a></li>
         <li class="tab col s3"><a href="#reviews">Reviews</a></li>
         <li class="tab col s3"><a href="#info">Info</a></li>
-      </ul>
+     </ul>
+
     </div>
+
        <div id="menu" class="col s9">
           {{#each menu}}
            <ul class="col s9">
@@ -17,7 +19,10 @@
              <button class='button' pid="{{_id}}" id="add-button">+</button>
            </ul>
            {{/each}}
+
        </div>
+
+
        <div id="reviews" class="col s9">
           {{#if currentUser}}
           {{#autoForm collection="Review" id="insertReview" type="insert"}}
@@ -64,9 +69,17 @@
                      <h6>Address:</h6>{{aboutRes.address}}
                 </div>
              </div>
+
            </div>
        </div>
 
+       <div id="order" class="col s3">
+      <h4>Orders</h4>
+         {{#each order}}
+         {{oFlavour}}{{oItem}}{{oPrice}}
+         {{/each}}
+      </div>
   </div>
+
 
 </template>

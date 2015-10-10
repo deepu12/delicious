@@ -16,15 +16,22 @@ Template.restaurantMenu.helpers({
      console.log("Image Id ",res);
      return res;
    },
+   order : function(params){
+      var oItems=Items.find({restaurantId:this.restaurantId, buyerId : Meteor.userId()}).fetch();
+      console.log("From Items collection ::::::::",oItems);
+      return oItems;
+   }
+});
+
+Template.restaurantMenu.onCreated(function(){
+   Meteor.subscribe('items');
 });
 
 Template.restaurantMenu.events({
-   "click #add-button" : function(event){
+   "click #add-button" : function(event, template){
+      console.log("RestaurantId : ",template.data.restaurantId);
       console.log("Menu Id : ",this._id);
-      var item = Menu.findOne({_id : this._id});
-      console.log("Events  : ",item);
-      
-
+      Meteor.call("addItem",this._id,template.data.restaurantId);
    }
 });
 
