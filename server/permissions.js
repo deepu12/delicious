@@ -12,7 +12,7 @@ Restaurants.allow({
 
 Images.allow({
   'insert': function (userId, doc) {
-    // add custom authentication code here
+
     return true;
    },
 });

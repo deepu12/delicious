@@ -1,5 +1,23 @@
 <template name="review">
-  <div s6 m4>
-{{> starsRating id='rating' size=25 mutable=true}}
-</div>
+
+      {{#if currentUser}}
+      {{#autoForm collection="Review" id="insertReview" type="insert"}}
+        <fieldset>
+          <legend>Add Comment</legend>
+          {{> starsRating id='rating' size=25 mutable=true}}
+          {{> afQuickField name='comment'}}
+          {{> afQuickField name='restaurantId' value=restaurantId type="hidden"}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Comment</button>
+      {{/autoForm}}
+      {{/if}}
+      <div id="menu" class="col s9">
+         {{#each review}}
+          <ul class="col s9">
+            <li class="tab col s9"><b>{{createdAt}}</b>
+             <p>{{comment}} by-<b>{{userName}}</b></p></li>
+           </ul>
+          {{/each}}
+      </div>
+
 </template>
