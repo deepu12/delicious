@@ -1,34 +1,32 @@
 <template name="home">
 	<h1>Welcome to Delicious</h1>
 {{#each restaurants}}
-	<div class="rowx">
-			<div class="col s12 m5">
-				<div class="card">
-					<a href="/restaurantMenu/{{_id}}"><div class="card-image">
-						{{#if imageId}}
-						{{#with imgId}}
-								<img src="{{this.url}}" width="45">
-						{{/with}}
-						{{else}}
-							<img src="/images/sample-2.jpg" width="45" height="85">
-						{{/if}}
+	<div class="row">
+		<div class="divider"></div>
+  <div class="section">
+    <a href="/restaurantMenu/{{_id}}">
+		 <div class="card-image" col s3 m3 >
+		 {{#if imageId}}
+		 {{#with imgId}}
+				 <img src="{{this.url}}" width="135" height="85">
+		 {{/with}}
+		 {{else}}
+			 <img src="/images/sample-2.jpg" width="135" height="85">
+		 {{/if}}
+	 </div>
+</a></div>
+    <p><div class="content" col s8 m8>
+ 		<a href="/restaurantMenu/{{_id}}"><h5>{{name}}</h5></a>
+ 		<span>{{location}}</span>
+ 		<p><h6>Contact Number:</h6>{{phoneNumber}}</p>
+ 		<p><h6>Address:</h6>{{address}}</p>
 
-					</div></a>
-					<div class="card-content">
-						<a href="/restaurantMenu/{{_id}}"><h5>{{name}}</h5></a>
-						<span>{{location}}</span>
-						<p><h6>Contact Number:</h6>{{phoneNumber}}</p>
-						<p><h6>Address:</h6>{{address}}</p>
-					</div>
-					<div class="card-action">
-						{{#if isOwner}}
-						<a href="/insertMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Add Menu</a>
-						{{else}}
-						<a href="/restaurantMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Go to Menu</a>
-						{{/if}}
-					</div>
-				</div>
-			</div>
-	</div>
-	{{/each}}
+ 		{{#if isOwner}}
+ 		<a href="/insertMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Add Menu</a>
+ 		{{else}}
+ 		<a href="/restaurantMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Go to Menu</a>
+ 		{{/if}}
+ 	</div></p>
+  </div>
+{{/each}}
 </template>

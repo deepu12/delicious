@@ -1,0 +1,11 @@
+<template name="menu">
+   {{#each menu}}
+   <ul class="col s8">
+      <li class="tab col s3">{{category}}</li>
+      <li class="tab col s2">{{item}}</li>
+      <li class="tab col s2">{{flavour}}</li>
+      <li class="tab col s1">{{price}}</li>
+      <button class='button' pid="{{_id}}" id="add-button" onclick="myFunction()">+</button>
+   </ul>
+   {{/each}}
+</template>

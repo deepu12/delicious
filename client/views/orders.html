@@ -1,0 +1,30 @@
+<template name="orders">
+<h4>Orders</h4>
+<table class="bordered">
+<thead>
+ <tr>
+      <th data-field="name">Item</th>
+      <th data-field="price">Price</th>
+      <th data-field="quantity">Quantity</th>
+      <th data-field="subtotal">Subtotal</th>
+ </tr>
+</thead>
+   {{#each order}}
+   <tbody>
+   <td>
+      {{oFlavour}}{{oItem}}
+   </td>
+   <td>
+      {{oPrice}}/-
+   </td>
+         <td>
+         <div type="button" class="button" id="add-btn" pid="{{menuId}}" style="width : 20px; height : 20px">+</div>
+            <input type="number" name="quantity" id="quantity" style="width : 35px; height : 30px" value="{{quantity}}" readonly="true">
+         <div type="button" class="button" id="dec-btn" pid="{{menuId}}" style="width : 20px; height : 20px">-</div></td>
+      <td>{{subtotal}}/-</td>
+      </tbody>
+   {{/each}}
+   <button id="prc-to-chk" class="button" pid="{{_id}}" disabled="true">Proceed to checkout</button>
+   </table>
+
+</template>
