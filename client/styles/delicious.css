@@ -8,6 +8,11 @@
     width: 35%;
     height: auto;
   };
+.img1 img {
+    border: 0;
+    width: 200px;
+    height: 130px;
+};
 .button {
        border: 2px solid #b85c68;
        background: #b57b80;

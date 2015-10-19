@@ -5,7 +5,11 @@
       <li class="tab col s2">{{item}}</li>
       <li class="tab col s2">{{flavour}}</li>
       <li class="tab col s1">{{price}}</li>
-      <button class='button' pid="{{_id}}" id="add-button" onclick="myFunction()">+</button>
+      {{#if isOwner}}
+      <a href="/editMenu/{{_id}}"><button class='button' pid="{{_id}}" id="edit-button">Edit</button></a>
+      {{else}}
+      <button class='button' pid="{{_id}}" id="add-button">+</button>
+      {{/if}}
    </ul>
    {{/each}}
 </template>

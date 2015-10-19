@@ -1,18 +1,16 @@
 Template.home.helpers({
   restaurants : function(){
-    return Restaurants.find();
-  },
-  title : function(){
-    console.log(this._id);
-    if(this.ownerId===Meteor.userId())
-      return  "Add Menu";
-    else
-      return "Go To Menu";
+    //return Restaurants.find();
+    var restaurant=Restaurants.find();
+     if(restaurant.ownerId === Meteor.userId())
+        return restOwner=Restaurants.find({ownerId : Meteor.userId()});
+     else
+        return restaurant;
   },
   isOwner : function(){
     var restaurant=Restaurants.findOne({_id:this._id});
-    console.log("Image ID: ",restaurant.imageId);
-    return restaurant.ownerId===Meteor.userId();
+    //console.log("Image ID: ",restaurant.imageId);
+    return restaurant.ownerId === Meteor.userId();
   },
   imgId : function(){
     var imgId = Images.findOne({_id:this.imageId});
