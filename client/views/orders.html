@@ -1,5 +1,6 @@
 <template name="orders">
 <h4>Orders</h4>
+{{#if order.length}}
 <table class="bordered">
 <thead>
  <tr>
@@ -24,7 +25,8 @@
       <td>{{subtotal}}/-</td>
       </tbody>
    {{/each}}
-   <button id="prc-to-chk" class="button" pid="{{_id}}" disabled="true">Proceed to checkout</button>
+   <button id="prc-to-chk" class="button" pid="{{_id}}" disabled>Proceed to checkout</button>
    </table>
+   {{/if}}
 
 </template>
