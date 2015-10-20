@@ -1,0 +1,10 @@
+<template name="searchBox">
+   {{> esInput index="restaurants" placeholder="Search Location or Restaurants" }}
+
+   <ul>
+      {{#esEach index="restaurants"}}
+           <a href="restaurantMenu/{{_id}}"><li>Location : {{location}} ,Restaurant : {{name}}, Address : {{address}} </li></a>
+      {{/esEach}}
+   </ul>
+
+</template>

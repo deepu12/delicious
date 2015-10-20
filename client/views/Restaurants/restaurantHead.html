@@ -1,0 +1,14 @@
+<template name="restaurantHead">
+<div class="card-image">
+
+      {{#if imageId}}
+      {{#with imgId}}
+         <img src="{{this.url}}" width="110" height="65">
+      {{/with}}
+      {{else}}
+         <img src="/images/sample-2.jpg" width="110" height="65">
+      {{/if}}
+<h2 style="display : inline-block">{{restInfo.name}}</h2>
+   </div>
+
+</template>

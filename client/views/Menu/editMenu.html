@@ -1,0 +1,18 @@
+<template name="editMenu">
+   {{> restaurantHead menuItem}}
+   <div class="col s9">
+   {{> menu menuItem }}
+   {{#if currentUser}}
+   {{#autoForm collection="Menu" id="updateMenu" type="update" doc=menuItem}}
+<fieldset>
+  <legend>Edit Menu</legend>
+  {{> afQuickField name='category'}}
+  {{> afQuickField name='item'}}
+  {{> afQuickField name='flavour'}}
+  {{> afQuickField name='price'}}
+  <button type="submit" class="btn btn-primary">Save</button>
+</fieldset>
+{{/autoForm}}
+  {{/if}}
+  </div>
+</template>

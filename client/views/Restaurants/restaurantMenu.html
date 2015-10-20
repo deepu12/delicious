@@ -1,0 +1,24 @@
+<template name="restaurantMenu">
+   {{> restaurantHead}}
+ <div class="row">
+    <div class="col s8">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#menu">Menu</a></li>
+        <li class="tab col s3"><a href="#reviews">Reviews</a></li>
+        <li class="tab col s2"><a class="active" href="#info">Info</a></li>
+     </ul>
+    </div>
+       <div id="menu" class="col s8">
+          {{> menu}}
+       </div>
+       <div id="reviews" class="col s8">
+          {{> review}}
+       </div>
+       <div id="info" class="col s8">
+         {{> info}}
+       </div>
+       <div id="order" class="col s4">
+      {{> orders}}
+   </div>
+  </div>
+</template>

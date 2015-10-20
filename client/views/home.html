@@ -3,30 +3,35 @@
 	{{#each restaurants}}
   <div class="row">
 	<div class="divider"></div>
-		<div class="section">
+		<div class="section app-inline">
  			<a href="/restaurantMenu/{{_id}}">
 	 		<div class="card-image" col s3 m3 >
 	 		{{#if imageId}}
 	 		{{#with imgId}}
-			 <img src="{{this.url}}" width="135" height="85">
+			 <img src="{{this.url}}" width="135" height="100">
 	 	 	{{/with}}
 	 		{{else}}
-		 	 <img src="/images/sample-2.jpg" width="135" height="85">
+		 	 <img src="/images/sample-2.jpg" width="135" height="100">
 	 	 	{{/if}}
  			</div>
 			</a></div>
- 			<p><div class="content" col s8 m8>
+			&nbsp;
+			&nbsp;
+			&nbsp;
+ 			<p class="app-inline"><div class="content" col s8 m8>
 				<a href="/restaurantMenu/{{_id}}"><h5>{{name}}</h5></a>
 				<span>{{location}}</span>
-				<p><h6>Contact Number:</h6>{{phoneNumber}}</p>
-				<p><h6>Address:</h6>{{address}}</p>
+				<p><h6><b>Contact Number:</b>{{phoneNumber}}</h6></p>
+				<p><h6><b>Address:</b>{{address}}</h6></p>
 			</div></p>
+			<div class="new" style="float : right">
 			{{#if isOwner}}
  		<a href="/insertMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Add Menu</a>
 		<a href="/edit/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Edit</a>
 			{{else}}
  		<a href="/restaurantMenu/{{_id}}" rid="{{_id}}" class="btn" id="menu-action">Go to Menu</a>
 			{{/if}}
+			</div>
   	  </div>
 	{{/each}}
 </template>

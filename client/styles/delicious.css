@@ -13,6 +13,13 @@
     width: 200px;
     height: 130px;
 };
+h2 {
+  font-size: 3.56rem;
+  line-height: 110%;
+  width: inherit;
+  margin: 1.78rem 0 1.424rem 0;
+  display: -webkit-inline-box;
+};
 .button {
        border: 2px solid #b85c68;
        background: #b57b80;
@@ -95,4 +102,8 @@ body {
 
 main {
     flex: 1 0 auto;
-  }
+}
+
+.app-inline{
+   display: inline-block;
+}

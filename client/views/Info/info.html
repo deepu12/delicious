@@ -1,0 +1,29 @@
+<template name="info">
+
+<!-- <div class="rowx">
+  <div class="col s4 m5">
+     <div class="card">
+        <div class="card-image">
+           {{#if imageId}}
+           {{#with imgId}}
+              <img src="{{this.url}}" width="78" height="150">
+           {{/with}}
+           {{else}}
+              <img src="/images/sample-2.jpg" width="78" height="150">
+           {{/if}}
+
+        </div>
+     </div>
+  </div>
+</div> -->
+&nbsp;
+<div class="rowx">
+<div class="col s8 m8">
+  <div class="card">
+        <span><b>Description :</b>{{aboutRes.description}}</span>
+           <h6><b>Address:</b>{{aboutRes.address}}</h6>
+           <h6><b>Contact Number :</b> {{aboutRes.phoneNumber}}</h6>
+     </div>
+  </div>
+ </div>
+</template>

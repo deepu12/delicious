@@ -1,3 +1,3 @@
-Meteor.publish('items', function () { // why lang aurgument???
+Meteor.publish('items', function () { 
     return Items.find();
 });
