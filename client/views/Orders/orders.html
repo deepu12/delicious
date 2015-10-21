@@ -1,7 +1,8 @@
 <template name="orders">
 <h4>Orders</h4>
-{{#if order.length}}
+
 <table class="bordered">
+   {{#if order.length}}
 <thead>
  <tr>
       <th data-field="name">Item</th>
@@ -26,7 +27,9 @@
       </tbody>
    {{/each}}
    <a href="/checkout/{{restaurantId}}"><button id="prc-to-chk" class="button" pid="{{_id}}">Proceed to checkout</button></a>
+   {{else}}
+   <h5>Delivery Time : 1Hr</h5>
+   <h5>Delivery Fee : Free</h5>
+      {{/if}}
    </table>
-   {{/if}}
-
 </template>

@@ -2,14 +2,14 @@
    {{#if menu}}
    {{#each menu}}
    <ul class="col s8">
-      <li class="tab col s3">{{category}}</li>
+      <li class="tab col s2">{{category}}</li>
       <li class="tab col s2">{{item}}</li>
       <li class="tab col s2">{{flavour}}</li>
-      <li class="tab col s1">{{price}}</li>
+      <li class="tab col s2">₹{{price}}/-</li>
       {{#if isOwner}}
-      <a href="/editMenu/{{_id}}"><button class='button' pid="{{_id}}" id="edit-button">Edit</button></a>
+      <a href="/editMenu/{{_id}}"><button class='btn waves-effect waves-light' pid="{{_id}}" id="edit-button">Edit</button></a>
       {{else}}
-      <button class='button' pid="{{_id}}" id="add-button">+</button>
+      <button class='btn waves-effect waves-light' pid="{{_id}}" id="add-button">+</button>
       {{/if}}
    </ul>
    {{/each}}
@@ -17,9 +17,11 @@
    {{#if isOwner}}
    <h5><a href="/insertMenu/{{restaurantId}}">Its Empty here... Please add some items now</a></h5>
    {{else}}
-   <h5><div class="para" style="font-family : verdana; color : red">
-      Thank you for your interest.
-          Menu will be updated soon. 
+   <h5><div class="para" style="font-family : verdana; color : red; font-size : 20px">
+      <pre>
+         Thank you for your interest.
+         Menu will be updated soon.
+      </pre>
    </div>  </h5>
    {{/if}}
    {{/if}}

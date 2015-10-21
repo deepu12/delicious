@@ -10,6 +10,7 @@
         <button type="submit" class="btn btn-primary">Comment</button>
       {{/autoForm}}
       {{/if}}
+      {{#if review}}
       <div id="menu" class="col s9">
          {{#each review}}
           <ul class="col s9">
@@ -18,4 +19,13 @@
            </ul>
           {{/each}}
       </div>
+      {{else}}
+      <h5>
+         <div class="para" style="font-family : verdana; color : red; font-size : 20px">
+         <pre>
+            There are no reviews yet. Please add one.
+         </pre>
+         </div>
+      </h5>
+      {{/if}}
 </template>

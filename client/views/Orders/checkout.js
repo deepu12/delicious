@@ -6,11 +6,30 @@ Template.checkout.helpers({
       //    total = total + oItems.subtotal;
       // }
           oItems.forEach(function (tot){
-             total += oItems.subtotal;
-             console.log("Loop Total: ", total);
-          })
+             total += (tot.subtotal);
+             console.log("Loop Total: "+ total);
+          });
+
+          Session.set("ord-total", total);
 
       console.log("Total : ", total);
+      Session.set("items", oItems);
       return oItems;
+   },
+   oTotal: function(){
+      return Session.get("ord-total");
+   }
+});
+
+Template.checkout.events({
+   "click #chk-out" : function(event){
+      var oitem= Session.get("items");
+      var iTot = Session.get("ord-total")
+      Orders.insert({'items': oitem, 'total':iTot}, function(error , result){
+         Session.set("res", result);
+      });
+      var rest1=Session.get("res");
+      console.log("RES:"+rest1);
+      FlowRouter.go('/placeOrder/');
    }
 })

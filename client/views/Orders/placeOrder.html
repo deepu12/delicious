@@ -1,0 +1,44 @@
+<template name="placeOrder">
+   {{#if orders}}
+   {{> restaurantHead.orders}}
+      &nbsp;
+
+      <div class="row">
+      <div class="col s8">
+   <table class="bordered">
+   <thead>
+    <tr>
+         <th data-field="name">Item</th>
+         <th data-field="price">Price</th>
+         <th data-field="quantity">Quantity</th>
+         <th data-field="subtotal">Subtotal</th>
+    </tr>
+   </thead>
+      {{#each orders.items}}
+      <tbody>
+      <td>
+         {{oFlavour}} {{oItem}}
+      </td>
+      <td>
+         {{oPrice}}/-
+      </td>
+      <td>
+        <input type="number" name="quantity" id="quantity" style="width : 35px; height : 30px" value="{{quantity}}" readonly="true">
+      </td>
+        <td>{{subtotal}}/-</td>
+      </tbody>
+         <div class="divider"></div>
+      {{/each}}
+
+      </table>
+      <h5>Total : {{orders.total}}</h5>
+      </div>
+   </div>
+   {{else}}
+   <h5><div class="para" style="font-family : verdana; color : red; font-size : 20px">
+      <pre>
+         Oooooops....Something went wrong please try again later.
+      </pre>
+   </div></h5>
+   {{/if}}
+</template>
