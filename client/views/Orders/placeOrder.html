@@ -1,10 +1,23 @@
 <template name="placeOrder">
    {{#if orders}}
-   {{> restaurantHead.orders}}
+   {{_id}}
+   {{> restaurantHead orders.items}}
       &nbsp;
-
-      <div class="row">
-      <div class="col s8">
+<div class="row">
+  <div class="col s6">
+      {{#autoForm collection="Userorders" id="insertDetails" type="insert"}}
+        <fieldset>
+          <legend>Required Details</legend>
+          <!-- {{> afQuickField name='username'}} -->
+          {{> afQuickField name='contact'}}
+          {{> afQuickField name='flatNo'}}
+          {{> afQuickField name='apartment'}}
+          {{> afQuickField name='orderId' value=orders._id type="hidden"}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Place Order</button>
+      {{/autoForm}}
+    </div>
+      <div class="col s4">
    <table class="bordered">
    <thead>
     <tr>
@@ -29,7 +42,6 @@
       </tbody>
          <div class="divider"></div>
       {{/each}}
-
       </table>
       <h5>Total : {{orders.total}}</h5>
       </div>

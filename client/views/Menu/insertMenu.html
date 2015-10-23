@@ -2,8 +2,8 @@
    {{> restaurantHead}}
    <div class="col s9">
    {{> menu}}
-  {{#if currentUser}}
-  {{#autoForm collection="Menu" id="insertMenu" type="insert"}}
+   {{#if currentUser}}
+   {{#autoForm collection="Menu" id="insertMenu" type="insert"}}
     <fieldset>
       <legend>Add Menu</legend>
       {{> afQuickField name='category'}}
@@ -13,7 +13,6 @@
       {{> afQuickField name='restaurantId' value=restaurantId type="hidden"}}
       <button type="submit" class="btn btn-primary">Save</button>
     </fieldset>
-
   {{/autoForm}}
   {{/if}}
   </div>

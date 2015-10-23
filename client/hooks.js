@@ -26,5 +26,13 @@ AutoForm.hooks({
         }
         return false;
      }
- }
+  },
+  insertDetails : {
+     onError : function(insert , error){
+        console.log("onError Function"+error);
+     },
+     onSuccess : function(insert , error){
+         FlowRouter.go('/placeOrder/success');
+         }
+      }
 });

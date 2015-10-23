@@ -6,6 +6,13 @@
         <li>{{>loginButtons}}</li>
         {{#if currentUser}}
         <li><a href="/insertRestaurant">Add Restaurant</a></li>
+        <button class='dropdown-button btn' data-activates='orders' data-beloworigin="true">Orders</button>
+
+<!-- Dropdown Structure -->
+      <ul id='orders' class='dropdown-content'>
+         <li><a href="/placedOrders">Placed Orders</a></li>
+         <li><a href="/userOrders">Your Orders</a></li>
+      </ul>
         {{/if}}
       </ul>
     </div>
